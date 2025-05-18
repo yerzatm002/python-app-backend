@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ach1",
+    "title": "Алғашқы қадам",
+    "description": "Бірінші тапсырманы орында",
+    "taskId": "task1"
+  },
+  {
+    "id": "ach2",
+    "title": "Жетістіктер жолы",
+    "description": "10 тапсырма орында",
+    "minTasks": 10
+  },
+  {
+    "id": "ach3",
+    "title": "Python жұлдызы",
+    "description": "100 XP жина",
+    "minXp": 100
+  }
+]

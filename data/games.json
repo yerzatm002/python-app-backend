@@ -1,0 +1,93 @@
+[
+  {
+    "id": "game1",
+    "type": "mcq",
+    "question": "Келесі кодтың нәтижесі қандай болады?:",
+    "code": "print(2 + 3 * 2)",
+    "options": ["10", "7", "8", "6"],
+    "correct": 2
+  },
+  {
+    "id": "game2",
+    "type": "mcq",
+    "question": "Қанша символ бар?",
+    "code": "print(len('python'))",
+    "options": ["5", "6", "7", "Ошибка"],
+    "correct": 1
+  },
+  {
+    "id": "game3",
+    "type": "mcq",
+    "question": "Бұл кодтың нәтижесі қандай болады?",
+    "code": "x = 10\nx += 5\nprint(x)",
+    "options": ["5", "10", "15", "20"],
+    "correct": 2
+  },
+  {
+    "id": "game4",
+    "type": "mcq",
+    "question": "Қайсысы дұрыс айнымалы аты?",
+    "options": ["1variable", "_var", "my-var", "class"],
+    "correct": 1
+  },
+  {
+    "id": "game5",
+    "type": "mcq",
+    "question": "Бұл код не қайтарады?",
+    "code": "print('Python'[0])",
+    "options": ["P", "y", "0", "n"],
+    "correct": 0
+  },
+  {
+    "id": "game6",
+    "type": "mcq",
+    "question": "print(bool('')) не қайтарады?",
+    "options": ["True", "False", "Ошибка", "None"],
+    "correct": 1
+  },
+  {
+    "id": "game7",
+    "type": "mcq",
+    "question": "Бұл кодтағы қате неде?",
+    "code": "for i in range(5)\n  print(i)",
+    "options": [
+      "Цикл дұрыс",
+      "print қатесі",
+      "Қос нүкте (:) жетіспейді",
+      "range жұмыс істемейді"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "game8",
+    "type": "mcq",
+    "question": "Функцияны қалай шақырамыз?",
+    "code": "def greet():\n  print('Сәлем')",
+    "options": [
+      "`call greet`",
+      "`print(greet)`",
+      "`greet()`",
+      "`run greet()`"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "game9",
+    "type": "mcq",
+    "question": "Қайсысы дұрыс тізім құру жолы?",
+    "options": [
+      "`list = (1, 2, 3)`",
+      "`list = 1, 2, 3`",
+      "`list = [1, 2, 3]`",
+      "`list = {1, 2, 3}`"
+    ],
+    "correct": 2
+  },
+  {
+    "id": "game10",
+    "type": "mcq",
+    "question": "int('10') + float('5.5') не береді?",
+    "options": ["15.5", "105.5", "Қате", "15"],
+    "correct": 0
+  }
+]
