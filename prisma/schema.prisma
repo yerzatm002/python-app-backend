@@ -39,7 +39,8 @@ model Course {
   id          String   @id @default(cuid())
   title       String
   description String
-  imageUrl    String?  
+  imageUrl    String?
+  difficulty  String? 
   lessons     Lesson[]
 }
 
