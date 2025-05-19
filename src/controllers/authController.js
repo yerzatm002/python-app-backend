@@ -64,7 +64,7 @@ exports.login = async (req, res) => {
 exports.getMe = async (req, res) => {
   const user = await prisma.user.findUnique({
     where: { id: req.user.id },
-    select: { id: true, name: true, email: true, avatar: true, xp: true, level: true },
+    select: { id: true, name: true, email: true, avatar: true, xp: true, level: true, difficulty: true },
   });
   res.json(user);
 };
