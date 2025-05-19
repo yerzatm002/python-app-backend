@@ -22,3 +22,12 @@ exports.addProgress = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getAllProgresses = async (req, res, next) => {
+  try {
+    const result = await progressService.getAllProgresses();
+    res.json(result);
+  } catch (err) {
+    next(err);
+  }
+};

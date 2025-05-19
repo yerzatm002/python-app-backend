@@ -1,16 +1,21 @@
 const jwt = require('jsonwebtoken');
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
 
-module.exports = (req, res, next) => {
-  const auth = req.headers.authorization;
-  if (!auth || !auth.startsWith('Bearer '))
-    return res.status(401).json({ error: 'Авторизация қажет' });
+module.exports = async function authMiddleware(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ error: 'Авторизация қажет' });
 
-  const token = auth.split(' ')[1];
+  const token = authHeader.split(' ')[1];
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // { id: ... }
+    const user = await prisma.user.findUnique({ where: { id: decoded.id } });
+
+    if (!user) return res.status(401).json({ error: 'Пайдаланушы табылмады' });
+
+    req.user = user;
     next();
-  } catch {
-    return res.status(401).json({ error: 'Қате токен' });
+  } catch (err) {
+    return res.status(401).json({ error: 'Токен жарамсыз' });
   }
 };

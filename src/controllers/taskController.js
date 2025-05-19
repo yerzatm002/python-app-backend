@@ -21,3 +21,25 @@ exports.submitTask = async (req, res, next) => {
     next(err);
   }
 };
+
+
+exports.createTask = async (req, res, next) => {
+  try {
+    const data = req.body;
+
+    const created = await taskService.createTask(data);
+    res.status(201).json(created);
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getTasksByLesson = async (req, res, next) => {
+  try {
+    const lessonId = req.params.lessonId;
+    const tasks = await taskService.getTasksByLessonId(lessonId);
+    res.json(tasks);
+  } catch (err) {
+    next(err);
+  }
+};

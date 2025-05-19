@@ -14,17 +14,25 @@ datasource db {
 }
 
 model User {
-  id         String     @id @default(cuid())
-  email      String     @unique
-  password   String
-  name       String
-  avatar     String?
-  difficulty String?
-  xp         Int        @default(0)
-  level      Int        @default(1)
-  streak     Int        @default(0)
+  id              String     @id @default(cuid())
+  email           String     @unique
+  password        String
+  name            String
+  avatar          String?
+  difficulty      String?
+  role            Role       @default(STUDENT)
+  xp              Int        @default(0)
+  level           Int        @default(1)
+  streak          Int        @default(0)
   lastCompletedAt DateTime?
-  progress   Progress[]
+  createdAt       DateTime   @default(now())
+  progress        Progress[]
+}
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
 }
 
 model Course {
@@ -39,6 +47,8 @@ model Lesson {
   id       String  @id @default(cuid())
   title    String
   content  String
+  material  String?      
+  videoUrl  String?
   task     Task?   @relation(fields: [taskId], references: [id])
   taskId   String? @unique
   course   Course  @relation(fields: [courseId], references: [id])

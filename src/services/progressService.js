@@ -42,7 +42,32 @@ async function addProgress(userId, taskId) {
   });
 }
 
+async function getAllProgresses() {
+  const users = await prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      role: true,
+      xp: true,
+      progress: {
+        select: { taskId: true },
+      },
+    },
+  });
+
+  return users.map(user => ({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    role: user.role,
+    xp: user.xp,
+    completedTasks: user.progress.length,
+  }));
+}
+
 module.exports = {
   getUserProgress,
   addProgress,
+  getAllProgresses,
 };

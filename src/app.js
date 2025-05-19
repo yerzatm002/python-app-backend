@@ -18,7 +18,7 @@ app.use('/api/achievements', require('./routes/achievements'));
 app.use('/api/daily', require('./routes/daily'));
 app.use('/api/games', require('./routes/games'));
 app.use('/api/progress', require('./routes/progress'));
-
+app.use('/api/admin', require('./routes/admin'));
 
 
 app.use(errorHandler);
