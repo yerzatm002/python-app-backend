@@ -92,4 +92,6 @@ async function getTasksByLessonId(lessonId) {
 module.exports = {
   getTaskById,
   submitTask,
+  createTask,
+  getTasksByLessonId
 };
